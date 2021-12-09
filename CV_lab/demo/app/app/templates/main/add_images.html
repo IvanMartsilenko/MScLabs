@@ -1,0 +1,31 @@
+{% extends 'base_m.html' %}
+{% block title %}
+Додавання фотографій
+{% endblock %}
+{% block body %}
+<div class="container mt-5">
+   <div class="d-flex justify-content-center">
+      <aside class="col-sm-10">
+         <div class="card">
+            <article class="card-body">
+              <h1>Додавання фотографій</h1>
+              <form method = "post" enctype="multipart/form-data">
+                {% csrf_token %}
+                  <div class="form-group m-3">
+                      <hr>
+                      <p align="center">
+                          <button class="btn btn-large btn-block btn-outline-info"  onclick="document.getElementById('getFile').click()">Обрати файли</button>
+                      </p>
+                      <hr>
+                      <p align="center">
+                          <input required name="images" type="file" multiple class="form-control-file" id="getFile" style="display:none">
+                          <button class="btn btn-large btn-block btn-outline-info" type="submit">Завантажити</button>
+                      </p>
+                  </div>
+              </form>
+            </article>
+         </div>
+      </aside>
+   </div>
+</div>
+{% endblock %}

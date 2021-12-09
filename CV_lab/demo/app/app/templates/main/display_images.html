@@ -1,0 +1,68 @@
+{% extends 'base_m.html' %}
+
+{% block title %}
+Перелік завантажених фото
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <aside class="col-sm-10">
+            <div class="card">
+                <article class="card-body">
+                    <table class="col-sm-12" border="0">
+                        <tr>
+                            <td>
+                               <h1 align="center">Перелік завантажених фото</h1>
+                            </td>
+                            <td align="left">
+                                <h1><a href="/add_images" class="badge badge-info">+</a></h1>
+                            </td>
+                        </tr>
+                    </table>
+                </article>
+            </div>
+        </aside>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <aside class="col-sm-10">
+            <div class="card">
+                <article class="card-body">
+                    <form method = "post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                    <button class="btn btn-large btn-block btn-outline-info" type="submit">Сортувати</button>
+                    </form>
+                </article>
+            </div>
+        </aside>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <div class="row">
+            {% for el in imgs %}
+          <div class="col-md-4">
+              <table class="table" border="0">
+                  <tr align="center">
+                      <td colspan="2">
+                          <img src="{{el.image.url}}" class="img-responsive" style="width: 75%; float: center;"/>
+                      </td>
+                  </tr>
+                  <tr align="center">
+                      <td> {{ el.name }}</td>
+                      <td><a href="/display_images/{{el.id}}/delete_image" class="btn btn-outline-info">Видалити</a></td>
+                  </tr>
+              </table>
+          </div>
+             {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

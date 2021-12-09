@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+    </style>
+</head>
+<body>
+
+        <div class="d-flex justify-content-between flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+            <nav class="my-2 my-md-0 mr-md-3">
+                <h4 class="my-0 mr-md-auto font-weight-normal">SortDemo</h4>
+            </nav>
+
+
+            <nav class="my-2 my-md-0 mr-md-3">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Головна
+                    </button>
+
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item bg-light text-info" href="/" role="button">Головна</a>
+                        <a class="dropdown-item bg-light text-info" href="/info">Про Нас</a>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Обробка фото
+                    </button>
+
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item bg-light text-info" href="/add_images">Додати фото</a>
+                        <a class="dropdown-item bg-light text-info" href="/display_images">Перегляд завантажених фото</a>
+<!--                        <a class="dropdown-item bg-light text-info" href="/">Останнє <br> сортування</a>-->
+                    </div>
+                </div>
+
+                <a class="btn btn-info text-white" href="/add_images">Додати фото</a>
+            </nav>
+        </div>
+
+    {% block body %}
+    {% endblock %}
+
+    <footer class="container pt-4 my-md-5 pt-md-5 border-top">
+<!--        <div class="row">-->
+<!--          <div class="col-12 col-md">-->
+<!--          </div>-->
+<!--          <div class="col-6 col-md">-->
+
+<!--          </div>-->
+<!--          <div class="col-6 col-md">-->
+
+<!--          </div>-->
+<!--          <div class="col-6 col-md">-->
+
+<!--          </div>-->
+<!--        </div>-->
+      </footer>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="{% static 'js/charts.js' %}"></script>
+</body>
+</html>
